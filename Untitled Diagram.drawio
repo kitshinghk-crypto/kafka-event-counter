@@ -1,1 +1,85 @@
-<mxfile host="app.diagrams.net" modified="2021-11-14T19:41:43.813Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15" version="15.7.3" etag="pmrQyZ6rkkymgBM6P3Kv" type="github"><diagram id="hIZapWvZOqZCiQXdTcN_">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-11-14T19:54:12.491Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15" etag="I56ap0t9F2kIm0-lXWnm" version="15.7.3" type="github">
+  <diagram id="hIZapWvZOqZCiQXdTcN_" name="Page-1">
+    <mxGraphModel dx="830" dy="544" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-1" target="1F6BWVOssTdYbOUb1CEb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-1" value="Event producer&amp;nbsp;&lt;br&gt;Endpoint" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-3" target="1F6BWVOssTdYbOUb1CEb-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-3" target="1F6BWVOssTdYbOUb1CEb-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-3" value="Apache Kafka" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-4" target="1F6BWVOssTdYbOUb1CEb-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-4" value="Event Persistance Consumer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-5" target="1F6BWVOssTdYbOUb1CEb-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-5" value="Event real-time&lt;br&gt;counter consumer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-7" target="1F6BWVOssTdYbOUb1CEb-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-7" value="Postgres" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-8" value="Redis" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="500" y="400" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-9" target="1F6BWVOssTdYbOUb1CEb-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-9" value="Real-time event tracker endpoint" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-16" value="Replica &amp;nbsp;for reports" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-18" target="1F6BWVOssTdYbOUb1CEb-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-18" value="Data aggregation&lt;br&gt;worker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="225" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.855;entryY=1;entryDx=0;entryDy=-4.35;entryPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-20" target="1F6BWVOssTdYbOUb1CEb-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-20" value="Event statistics endpoint" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="225" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-22" target="1F6BWVOssTdYbOUb1CEb-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-22" value="Event generator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="105" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-24" target="1F6BWVOssTdYbOUb1CEb-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-24" value="Event tracker" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="530" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="1F6BWVOssTdYbOUb1CEb-28" target="1F6BWVOssTdYbOUb1CEb-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1F6BWVOssTdYbOUb1CEb-28" value="Event statistic analyser&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="785" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
