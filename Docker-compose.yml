@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:9.6.1
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=event_counter
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    networks:
+      - psql
+
+  event-generation-endpoint:
+    container_name: event-generation-endpoint
+    build:
+      context: .
+      target: event-generation-endpoint
+    ports:
+      - '80:8080'
+    networks:
+      - kafka-network
+      - psql
+
+  event-persistence-consumer:
+    container_name: event-persistence-consumer
+    build:
+      context: .
+      target: event-persistence-consumer
+    networks:
+      - kafka-network
+      - psql
+
+networks:
+  kafka-network:
+    external:
+      name: kafka-network
+  psql:
+    driver: bridge
+

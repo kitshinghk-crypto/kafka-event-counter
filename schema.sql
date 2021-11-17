@@ -1,0 +1,6 @@
+CREATE TABLE event (
+	uuid VARCHAR PRIMARY KEY,
+	type VARCHAR,
+	ip VARCHAR,
+	url VARCHAR
+);
