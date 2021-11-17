@@ -1,6 +1,6 @@
 package com.demo.eventcounter.config;
 
-import com.demo.eventcounter.domain.Event;
+import com.demo.eventcounter.dto.domain.Event;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;

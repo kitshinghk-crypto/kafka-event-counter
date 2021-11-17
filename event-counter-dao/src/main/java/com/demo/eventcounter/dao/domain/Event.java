@@ -1,4 +1,4 @@
-package com.demo.eventcounter.domain;
+package com.demo.eventcounter.dao.domain;
 
 import javax.persistence.*;
 import java.util.UUID;

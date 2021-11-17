@@ -18,6 +18,7 @@
 
     <modules>
         <module>event-counter-core</module>
+        <module>event-counter-dao</module>
         <module>event-generation-endpoint</module>
         <module>event-persistence-consumer</module>
     </modules>

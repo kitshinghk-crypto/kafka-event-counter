@@ -14,7 +14,7 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.bind.annotation.*;
-import com.demo.eventcounter.domain.Event;
+import com.demo.eventcounter.dto.domain.Event;
 
 @Slf4j
 @RestController
