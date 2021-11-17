@@ -1,28 +1,26 @@
 package com.demo.eventcounter.domain;
 
+import javax.persistence.*;
+import java.util.UUID;
+import org.hibernate.annotations.GenericGenerator;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Entity
+@Table(name="event")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Event {
-    public enum TYPE {
-        CLICK, VIEW;
-
-        @Override
-        public String toString(){
-            return name();
-        }
-    }
-
-    private TYPE type;
+    @Id
+    //@org.hibernate.annotations.Type(type="org.hibernate.type.PostgresUUIDType")
     private String uuid;
+    private String type;
     private String ip;
     private String url;
 }
