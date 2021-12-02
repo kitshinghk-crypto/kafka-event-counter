@@ -13,3 +13,8 @@ FROM openjdk:11-jre-slim as event-realtime-counter-consumer
 COPY ./event-realtime-counter-consumer/target/event-realtime-counter-consumer-0.0.1-SNAPSHOT.jar \
 /usr/local/lib/event-realtime-counter-consumer.jar
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-realtime-counter-consumer.jar"]
+
+FROM openjdk:11-jre-slim as event-realtime-tracker
+COPY ./event-realtime-tracker/target/event-realtime-tracker-0.0.1-SNAPSHOT.jar \
+/usr/local/lib/event-realtime-tracker.jar
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-realtime-tracker.jar"]

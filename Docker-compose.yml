@@ -20,15 +20,23 @@ services:
     networks:
       - redis-network
 
+  nginx:
+    image: nginx:1.21.4-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - '80:80'
+    networks:
+      - public
+
   event-generation-endpoint:
     container_name: event-generation-endpoint
     build:
       context: .
       target: event-generation-endpoint
-    ports:
-      - '80:8080'
     networks:
       - kafka-network
+      - public
 
   event-persistence-consumer:
     container_name: event-persistence-consumer
@@ -48,6 +56,16 @@ services:
       - kafka-network
       - redis-network
 
+  event-realtime-tracker:
+    container_name: event-realtime-tracker
+    build:
+      context: .
+      target: event-realtime-tracker
+    networks:
+      - kafka-network
+      - redis-network
+      - public
+
 networks:
   kafka-network:
     external:
@@ -55,5 +73,7 @@ networks:
   psql:
     driver: bridge
   redis-network:
+    driver: bridge
+  public:
     driver: bridge
 
