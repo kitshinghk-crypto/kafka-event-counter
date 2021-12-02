@@ -21,6 +21,7 @@
         <module>event-counter-dao</module>
         <module>event-generation-endpoint</module>
         <module>event-persistence-consumer</module>
+        <module>event-realtime-counter-consumer</module>
     </modules>
 
     <properties>

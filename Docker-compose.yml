@@ -15,6 +15,11 @@ services:
     networks:
       - psql
 
+  redis:
+    image: redis:6
+    networks:
+      - redis-network
+
   event-generation-endpoint:
     container_name: event-generation-endpoint
     build:
@@ -24,7 +29,6 @@ services:
       - '80:8080'
     networks:
       - kafka-network
-      - psql
 
   event-persistence-consumer:
     container_name: event-persistence-consumer
@@ -35,10 +39,21 @@ services:
       - kafka-network
       - psql
 
+  event-realtime-counter-consumer:
+    container_name: event-realtime-counter-consumer
+    build:
+      context: .
+      target: event-realtime-counter-consumer
+    networks:
+      - kafka-network
+      - redis-network
+
 networks:
   kafka-network:
     external:
       name: kafka-network
   psql:
+    driver: bridge
+  redis-network:
     driver: bridge
 

@@ -8,3 +8,8 @@ FROM openjdk:11-jre-slim as event-persistence-consumer
 COPY ./event-persistence-consumer/target/event-persistence-consumer-0.0.1-SNAPSHOT.jar \
 /usr/local/lib/event-persistence-consumer.jar
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-persistence-consumer.jar"]
+
+FROM openjdk:11-jre-slim as event-realtime-counter-consumer
+COPY ./event-realtime-counter-consumer/target/event-realtime-counter-consumer-0.0.1-SNAPSHOT.jar \
+/usr/local/lib/event-realtime-counter-consumer.jar
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-realtime-counter-consumer.jar"]
