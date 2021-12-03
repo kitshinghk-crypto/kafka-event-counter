@@ -62,7 +62,6 @@ services:
       context: .
       target: event-realtime-tracker
     networks:
-      - kafka-network
       - redis-network
       - public
 
@@ -73,6 +72,15 @@ services:
       target: event-data-aggregation
     networks:
       - psql
+
+  event-statistics-endpoint:
+    container_name: event-statistics-endpoint
+    build:
+      context: .
+      target: event-statistics-endpoint
+    networks:
+      - psql
+      - public
 
 networks:
   kafka-network:

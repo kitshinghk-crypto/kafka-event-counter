@@ -23,3 +23,8 @@ FROM openjdk:11-jre-slim as event-data-aggregation
 COPY ./event-data-aggregation/target/event-data-aggregation-0.0.1-SNAPSHOT.jar \
 /usr/local/lib/event-data-aggregation.jar
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-data-aggregation.jar"]
+
+FROM openjdk:11-jre-slim as event-statistics-endpoint
+COPY ./event-statistics-endpoint/target/event-statistics-endpoint-0.0.1-SNAPSHOT.jar \
+/usr/local/lib/event-statistics-endpoint.jar
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/event-statistics-endpoint.jar"]
