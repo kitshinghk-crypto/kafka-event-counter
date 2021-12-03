@@ -51,11 +51,11 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public RedisAtomicInteger redisAtomicInteger(){
+    public RedisConnectionFactory redisAtomicInteger(){
         RedisStandaloneConfiguration c = new RedisStandaloneConfiguration();
         c.setHostName(redisHostname);
         c.setPort(redisPort);
         JedisConnectionFactory f = new JedisConnectionFactory(c);
-        return new RedisAtomicInteger("event-counter", f, 0);
+        return f;
     }
 }
