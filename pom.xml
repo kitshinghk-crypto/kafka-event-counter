@@ -23,6 +23,7 @@
         <module>event-persistence-consumer</module>
         <module>event-realtime-counter-consumer</module>
         <module>event-realtime-tracker</module>
+        <module>event-data-aggregation</module>
     </modules>
 
     <properties>

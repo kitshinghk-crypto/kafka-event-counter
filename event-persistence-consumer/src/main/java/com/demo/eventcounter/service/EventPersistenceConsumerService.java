@@ -15,6 +15,8 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
+
 @Component
 @Getter
 @Setter
@@ -39,6 +41,7 @@ public class EventPersistenceConsumerService {
         persistenceEvent.setType(event.getType());
         persistenceEvent.setUuid(event.getUuid());
         persistenceEvent.setUrl(event.getUrl());
+        persistenceEvent.setDatetime(LocalDateTime.now());
         this.eventRepository.save(persistenceEvent);
     }
 }

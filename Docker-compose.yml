@@ -66,6 +66,14 @@ services:
       - redis-network
       - public
 
+  event-data-aggregation:
+    container_name: event-data-aggregation
+    build:
+      context: .
+      target: event-data-aggregation
+    networks:
+      - psql
+
 networks:
   kafka-network:
     external:

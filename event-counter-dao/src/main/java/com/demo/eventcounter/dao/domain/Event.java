@@ -1,6 +1,7 @@
 package com.demo.eventcounter.dao.domain;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.UUID;
 import org.hibernate.annotations.GenericGenerator;
 import lombok.AllArgsConstructor;
@@ -23,4 +24,5 @@ public class Event {
     private String type;
     private String ip;
     private String url;
+    private LocalDateTime datetime;
 }
