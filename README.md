@@ -1,5 +1,5 @@
 # Kafka-event-counter
-This repository contains a system which count the event using Kafka and Spring Boot application. The project is built using Docker. The system has a micoservices architecture. It consists of multiple modules. The following diagram shows the overview of the system structure:
+This repository contains a system which counts the event using Java, Spring Boot, Kafka, Redis and Postgresql. The project is built using Docker. The system has a micoservices architecture. It consists of multiple modules. The following diagram shows the overview of the system structure:
 
 ![System diagram](https://github.com/kitshinghk-crypto/kafka-event-counter/blob/main/Untitled%20Diagram.jpg?raw=true)
 
@@ -41,7 +41,7 @@ if the request is handled successfully.
 
 ##  Event Persistance Consumer
 [Event Persistance Consumer](event-persistence-consumer) consumes the event messages in the Kafka queue and insert the 
-event in the Postgre DB. The module belongs to the consumer group, "group_persistence".
+event in the Postgre DB. The module belongs to the Kafka consumer group, "group_persistence".
 The following shows the 'event' table schema in Postgre DB. 
 
 ```
@@ -55,12 +55,11 @@ event_counter=# select * from event;
 ```
 ## Event real-time counter consumer
 [Event real-time counter consumer](event-realtime-counter-consumer) consumes the event messages in the Kafka queue and 
-update the atomic integer counter in Redis. The atomic counter use the url and the event type as the key, so that for 
-each event type of a url is counted separately. 
+update the atomic integer counter in Redis. The module belongs to the Kafka consumer group, "group_realtimecounter". The atomic counter uses the url and the event type as the key, so that for each event type of a url is counted separately. 
 
 ## Real-time Event Tracker Endpoint
 [Real-time Event Tracker Endpoint](event-realtime-tracker) provides REST API endpoint for tracking the real-time counter
-for the event occured for each url. The following shows an example of the API call and its corresponding response.
+for the event occured for each url. The counter is retrived from Redis cacahe. The following shows an example of the API call and its corresponding response.
 ```
 bash% curl -v --request POST \
   --url http://localhost/event_track/ \
@@ -91,7 +90,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 {"url":"https://www.facebook.com","events":[{"type":"CLICK","count":151},{"type":"VIEW","count":186}]}
 ```
 ## Data Aggregation Worker
-[Data Aggregation Worker](event-data-aggregation) aggregates the event data in Postgre DB into a summary table. The worker aggregate
+[Data Aggregation Worker](event-data-aggregation) aggregates the event data in Postgresql DB into a summary table. The worker aggregate
 the count every 5 minutes by each url, hour and event type. The following table shows an example of the summary table.
 ```
 event_counter=# select * from event_summary;
@@ -115,8 +114,7 @@ event_counter=# select * from event_summary;
 
 ## Event Statistics Endpoint
 [Event Statistics Endpoint](event-statistics-endpoint) provides a REST API endpoint to show the daily event statistics.
-The endpoint returns the count of each event type of each hour for a specified date and url. The following shows an 
-example API call.
+The endpoint returns the count of each event type of each hour for a specified date and url. The data is retrived from the summary table of postgresql DB. The following shows an example API call.
 
 ```
 % curl -v --request POST \
